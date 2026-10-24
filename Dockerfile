@@ -2,6 +2,7 @@
 FROM eclipse-temurin:27-jdk AS build
 WORKDIR /app
 COPY . .
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Run stage using Java 27 JRE runtime
